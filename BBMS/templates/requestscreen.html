@@ -1,0 +1,91 @@
+{%extends "web_base.html"%}
+{%block content%}
+<legend> Request Form </legend>
+<form class="form-horizontal" method="post" action="/requestform" name="requestform">
+<fieldset>
+
+<div class="control-group">  
+	    <label class="control-label" for="input01">Name:</label>  	
+            <div class="controls"> <input type="text" name="name" placeholder="Full Name" style="size:100px">
+	    </div>
+</div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="input01">Sex:</label> 
+	<div class="controls"> 
+	<label class="radio"> 
+	  <input type="radio" name="sex1" value="F"/>Female
+	 <label>
+	  <input type="radio" name="sex1" value="M"/> Male
+	</label> 
+</div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="input01">Contact no.(mobile):</label>
+	<div class="controls"> <input type="text" name="cellno">
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="input01">E-mail address:</label>
+	<div class="controls"><input type="text" name="email">
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label">City:</label>
+  	<div class="controls"> <select name="city">
+  	<option value="NULL">Select your city</option>
+  	<option value="Kathmandu">Kathmandu</option>
+  	<option value="Lalitpur">Lalitpur</option>
+  	<option value="Bhaktapur">Bhaktapur</option>
+  	<option value="Dhulikhel">Dhulikhel</option>
+	</select>
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label">Locality:</label>
+	<div class="controls"> <input type="text" name="locality">
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label">Blood Group:</label> 
+	<div class="controls"><select name="BloodGroup">
+  	<option value="NULL">Select your blood group</option>
+  	<option value="A+">A+</option>
+  	<option value="A-">A-</option>
+  	<option value="B+">B+</option>
+  	<option value="B-">B-</option>
+  	<option value="O+">O+</option>
+  	<option value="O-">O-</option>
+  	<option value="AB+">AB+</option>
+  	<option value="AB-">AB-</option>
+	</select>
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label">Date of Reception:</label>
+	<div class="controls"><input style="width: 40px" type="text" name=dd placeholder="  DD"> - <input style="width: 40px" type="text" name=mm placeholder="  MM"> - <input style="width: 80px" type="text" name=yy placeholder="    YYYY">
+	</div>
+<div class="control-group">
+	<div class="controls">
+	<p class="help-block">Enter date in AD.</p> 	
+	</div>
+</div>
+</div>
+<div class="control-group">
+	<label class="control-label">Donor Agreement:</label>
+        <p> Blood Donors App shall not be deemed responsible for any problem that may be caused by the individual</p>	
+<div class="controls">  
+              <label class="checkbox">  
+                <input type="checkbox" id="optionsCheckbox" value="option1">  
+                I agree with the terms & conditions.  
+              </label>  
+            </div>  
+<div class="form-actions">
+<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+<button type="reset" class="btn">Reset</button>
+</dev>
+
+</fieldset>
+</form>
+{%endblock%}
+

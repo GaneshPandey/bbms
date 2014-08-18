@@ -1,0 +1,22 @@
+from django.db import models
+
+# Create your models here.
+class donor_info(models.Model):
+	Donor_ID=models.AutoField(primary_key=True, auto_created=True)	
+	Name=models.CharField(max_length=50)
+	DOB=models.DateField()
+	Sex=models.CharField(max_length=1)
+	Permanent_Address=models.CharField(max_length=50)
+	Address=models.CharField(max_length=50)
+	Office_Name=models.CharField(max_length=50)
+	Number_Of_Previous_Blood_Donations=models.IntegerField()
+	Contact_Number=models.IntegerField()
+	Last_Date_Of_Blood_Donation=models.DateField()
+	Days_After_Mensturation=models.IntegerField()
+	Last_Date_Of_Foreign_Visit=models.DateField()
+	Medication=models.CharField(max_length=100)
+	Recent_Vaccination=models.CharField(max_length=50)
+	Donation_Upon_Request=models.CharField(max_length=3)	
+	#Registered_By=models.ForeignField(staff)
+	Registered_On=models.DateTime.now()
+

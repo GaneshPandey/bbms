@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<meta charset="utf-8"> 
+<title>Raktadata</title>
+<link rel="icon" 
+      type="image/png" 
+      href="/static/img/favicon.png">
+</head>
+<!css>
+
+<link href="/static/css/bootstrap.css" rel="stylesheet">
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+<style>
+</style>
+<!/css>
+
+
+<body>
+<div id="topPan">
+  <div id="topHeaderPan">
+  	<ul>
+		<li class="company">Home<br />
+</li>
+		<li><a href="/donate">Donate <br />
+</a></li>
+		
+		<li><a href="/request">Request</a></li>
+  <li class="client"><a href="/info">Info</a></li>
+
+	</ul>
+	
+   
+    <a href="index.html"><img src="/static/img/logo.gif" title="Blog Division" alt="Blog Division" border="0" height="84" width="191" /></a> </div>
+<div id="toprightPan">
+	<ul>
+		<li class="home">Home</li>
+		<li class="about"><a href="/about">About us</a></li>
+		<li class="contact"><a href="/contact">Contact</a></li>
+	</ul>
+</div>
+</div>
+
+
+{% block content %}
+{% endblock %}
+
+
+<div id="footermainPan">
+  <div id="footerPan">
+  	
+	<ul>
+  	<li><a href="/">Home</a>| </li>
+  	<li><a href="/about">About Us</a> | </li>
+  	<li><a href="/donate">Donate</a>| </li>
+  	<li><a href="/request">Request</a> | </li>
+  	<li><a href="/info">Info</a> |</li>
+	<li><a href="/contact">Contact</a> </li>
+	</ul>
+	<p class="copyright">©All rights reserved.</p>
+	<ul class="templateworld">
+  	<li>design by:</li>
+	<li><a href="http://www.templateworld.com" target="_blank">Template World</a></li>
+  </ul>
+</div>  
+</div>
+
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap-popover.js"></script>
+<script type="text/javascript" src="/static/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+			$('#donorform input').hover(function()
+			{
+			//$(this).popover('show')
+		});
+			$("#donorform").validate({
+				rules:{
+					name:"required",
+					phone:{
+					        required:true,
+						digits:true,
+					},
+					email:{
+						required:true,
+						email: true
+						},
+					city:{
+						required:true
+						},
+					locality:{
+						required:true
+						},
+					BloodGroup:{
+						required:true
+						},
+					dd:{
+						required:true,
+						digits:true
+						},
+					mm:{
+						required:true,
+						digits:true
+						},
+					yy:{	
+						required:true,
+						digits:true
+						}
+				},
+				messages:{
+					name:"Enter your Full name",
+					phone:{
+						required:"Enter Valid Phone Number",
+						digits:"Phone numbers have digits only"
+					},
+					email:{
+						required:"Enter your email address",
+						email:"Enter valid email address"
+					},
+				},
+				errorClass: "help-inline",
+				errorElement: "div",
+				highlight:function(element, errorClass, validClass) {
+					$(element).parents('.control-group').addClass('error');
+				},
+				unhighlight: function(element, errorClass, validClass) {
+					$(element).parents('.control-group').removeClass('error');
+					$(element).parents('.control-group').addClass('success');
+				}
+			});
+		});
+</script>
+</body>
+</html>

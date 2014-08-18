@@ -1,0 +1,42 @@
+{%extends "web_base.html" %}
+{%block content%}
+
+<div id="bodyPan">
+     
+     <div id="bodyleftPan">
+     <h3>Eligibity Requirements</h3>
+     <br>
+     <p>
+To ensure the safety of blood donation for both donors and recipients, all volunteer blood donors must be evaluated to determine their eligibility to give blood.
+     </p>
+     <img src="/static/img/a.jpg" alt="eligibity">
+     <p><h4>Blood Donors Must</h4></p>
+     <ol>
+	     <li>Be healthy</li>
+	     <li>Be at least 17 years old in most states</li>
+	     <li>Weigh at least 45kg</li>
+     
+     </div>
+
+
+
+
+     <div id="bodyrightPan">
+         <div id="loginPan">
+		<h2>donors <span>login</span></h2>
+		<form action="/login" method="post">
+		<label>Email Id</label><input name="email" id="email" type="text" />
+		<label>Password</label><input name="password" id="password" type="password" />
+		<input name="Input" class="button" value="Login" type="submit" />
+		</form>
+		<ul>
+			<li class="nonregister">Not Registered ?</li>
+			<li class="register"><a href="/donate">Resister now</a> </li>
+		</ul>
+	 </div>
+	<div id="loginBottomPan">&nbsp;</div>
+      </div>
+</div>
+<br>
+
+{%endblock%}

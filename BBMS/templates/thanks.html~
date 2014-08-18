@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{%block content%}
+<p>Your registration is successfully completed</p>
+{%endblock%}

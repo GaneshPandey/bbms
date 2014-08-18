@@ -1,0 +1,76 @@
+{% extends "back_base.html" %}
+
+{% block content %}
+	{% if errors %}
+		<p color="red" size="40px">Please check for the errors and resend</p> 
+        	<ul>
+          	  	{% for error in errors %}
+            		<li>{{ error }}</li>
+            		{% endfor %}
+        	</ul>
+    	{% endif %}
+
+<legend>Blood Donation Event Registration</legend>
+<form class ="form-horizontal" name="events" action="/events/register/" id="events" method="POST" data-validate="parsley">
+{% csrf_token %}
+<fieldset>
+	<div class="control-group">
+	<label class="control-label" for="input01">Organization Name:</label>
+ 	<div class="controls"><input type="text" name="name" id="name" value="{{name}}" data-required="true" data-trigger="keyup"><br>
+	</div>
+	</div>
+
+	<div class="control-group">
+	<label class="control-label" for="input01">Where:</label>
+	<div class="controls"> <input type="text" name="location" value="{{location}}" data-required="true" data-trigger="keyup"><br>
+	</div>
+	</div>
+	
+	<div class="control-group">
+	<label class="control-label" for="input01">When:</label>
+	<div class="controls"> <input type="datetime" name="date" value="{{date}}"data-required="true" data-type="dateIso"
+	 data-trigger="change"><br>
+	</div>
+	</div>
+
+	<div class="control-group">
+	<label class="control-label" for="input01">Contact Person Name:</label> 
+	<div class="controls"><input type="text" name="contact_name" value="{{contact_name}}" data-required="true" data-trigger="keyup"><br>
+	</div>
+	</div>	
+
+	<div class="control-group">
+	<label class="control-label" for="input01">Contact:</label>
+	<div class="controls"><input type="number" name="contact" value="{{contact}}" data-type="digits" data-required="true" 
+	data-trigger="keyup"><br>
+	</div>
+	</div>	
+
+	<div class="control-group">
+	<label class="control-label" for="input01">Email:</label>
+	<div class="controls"> <input type="email" name="email" value="{{email}}" data-type="email" data-required="ture"
+	 data-trigger="change"><br>
+	</div>
+	</div>
+	
+	<div class="control-group">
+	<label class="control-label" for="input01">Expected no. of donors:</label>
+	<div class="controls"> <input type="number" name="no_of_donors" value="{{no_of_donors}}"data-type="number" data-required="ture"
+	 data-trigger="keyup"><br>
+	</div>
+	</div>
+	
+	<div class="control-group">
+	<label class="control-label" for="input01">Event Details:</label> 
+	<div class="controls"><textarea id="details" name="details" data-trigger="keyup" >{{details}}</textarea><br>
+	</div>
+	</div>
+	
+	<div class="form-actions">
+	<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+	<button type="reset" class="btn">Reset</button>
+	</div>
+	
+</fieldset>
+</form>
+{% endblock %}

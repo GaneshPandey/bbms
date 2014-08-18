@@ -1,0 +1,14 @@
+from django.db import models
+
+# Create your models here.
+class request(models.Model):
+	 Name=models.CharField(max_length=50)
+    	 Sex=models.CharField(max_length=1)
+ 	 Mobile_no=models.IntegerField()
+	 Email=models.EmailField()
+         City=models.CharField(max_length=50)
+         Locality=models.CharField(max_length=50)
+         BloodGroup=models.CharField(max_length=50)
+         Date_Of_Reception=models.CharField(max_length=10)
+	 Published=models.CharField(max_length=3)
+	 Date_Of_Entry=models.DateTimeField(auto_now=True)

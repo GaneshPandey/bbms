@@ -1,0 +1,83 @@
+{% extends "back_base.html" %}
+{% block content %}
+<style type="text/css">
+      /* Override some defaults */
+      html, body {
+        background-color: #eee;
+      }
+      body {
+        padding-top: 40px; 
+      }
+      .container {
+        width: 300px;
+      }
+
+      /* The white background content wrapper */
+      .container > .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0 -20px; 
+        -webkit-border-radius: 10px 10px 10px 10px;
+           -moz-border-radius: 10px 10px 10px 10px;
+                border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+	  .login-form {
+		margin-left: 65px;
+	  }
+	
+	  legend {
+		margin-right: -50px;
+		font-weight: bold;
+	  	color: #404040;
+	  }
+#signin
+{
+	position:relative;
+	float:center;
+	margin-top:180px;
+}
+#remember
+{
+	margin-top:2px;
+}
+#textup
+{
+	margin-top:-10px;
+}
+    </style>
+<div id="signin">
+	<div class="container">
+		<div class="content">
+			<div class="row">
+				<div class="login-form">
+					<h2>Login</h2>
+					<div id="textup">
+					<font color="red">{{ state }}</font>
+					</div>
+				<form action="/login/" method="POST">
+					{%csrf_token%}
+						<fieldset>
+							<div class="clearfix">
+							Username:
+							<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input type="text" id="username" name="username" placeholder="Username" value="{{ username }}" >
+							</div>
+							<div class="clearfix">
+							Password:
+							<div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><input type="password" id="password" name="password"  placeholder="Password">
+							</div>
+							<label class="checkbox">
+        <input type="checkbox"> Remember me
+      </label>
+							<button class="btn btn-primary" type="submit">Log in</button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div> <!-- /container -->
+</div>
+{% endblock %}
